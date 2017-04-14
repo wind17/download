@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<a href="img/005.zip">下载</a>
+<button id="bt1" onclick="download(files)">下载</button>
+<script>
+    function download(files){
+        for(let i=0;i<files.length;i++){
+            let a=document.createElement('a');
+            a.href=files[i];
+            a.download=files[i].split('/')[1];
+            let event=document.createEvent('MouseEvent');
+            event.initMouseEvent('click',false,false);
+            a.dispatchEvent(event);
+        }
+    }
+    let files=['img/000.png','img/002.png','img/003.png'];
+</script>
+</body>
+</html>
